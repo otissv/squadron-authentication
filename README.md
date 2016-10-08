@@ -1,4 +1,4 @@
-# Express Rest API Starter  
+# Express GraphQL Authentication Service 
 
 Project starter for express api server.
 
