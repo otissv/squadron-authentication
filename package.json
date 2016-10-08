@@ -1,7 +1,7 @@
 {
   "name": "authentication-service",
   "version": "1.0.0",
-  "description": "Authentication API Service - Node, Graphql, Redis",
+  "description": "GraphQL Authentication Service - Node, Graphql, Redis",
   "scripts": {
     "start": "nodemon --exec npm run babel-node -- ./server/index.js localhost 3000",
     "babel-node": "babel-node",
