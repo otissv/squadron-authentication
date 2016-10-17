@@ -1,10 +1,3 @@
-import faker from 'faker';
-
-// const {
-//   date
-// } = faker;
-
-
 export const authentiactionsMock = [
   {
     id            : '051e4c84-af48-4372-82b9-432879d115a3',

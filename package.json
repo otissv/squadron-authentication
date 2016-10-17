@@ -1,9 +1,9 @@
 {
-  "name": "authentication-service",
+  "name": "squadron-authentication",
   "version": "1.0.0",
-  "description": "GraphQL Authentication Service - Node, Graphql, Redis ",
+  "description": "GraphQL Authentication Service with Node and Redis ",
   "scripts": {
-    "start": "nodemon --exec npm run babel-node -- ./server/index.js localhost 3000",
+    "start": "nodemon --exec npm run babel-node -- ./server/index.js",
     "babel-node": "babel-node",
     "lint": "eslint --quiet './' && echo 'Completed:' && date || true && echo 'Completed:' && date",
     "lint:watch": "watch 'npm run lint' ./backend",

@@ -1,23 +1,14 @@
-# Express GraphQL Authentication Service 
+# Squadron Authentication Service
 
-Project starter for express api server.
+GraphQL Authentication Service with Node and Redis.
 
-Includes:
-
-- [Node](https://nodejs.org/en/)
-- [Express](http://expressjs.com/)
-- [MongoDB](https://www.mongodb.org/)
-- [Redis](http://redis.io/)
-- [JSON Web Token](https://jwt.io/)
-- [Babel - ES6]( https://babeljs.io/)
-- [GraphQL (Apollo Server)](http://www.apollostack.com/)
 
 ## Usage
 
 1 . Clone the repo.
 
 ```
-$ git clone https://github.com/otissv/authentication-service.git
+$ git clone https://github.com/otissv/squadron-authentication.git
 ```
 
 2 . cd into the cloned directory and install the packages
@@ -26,7 +17,12 @@ $ git clone https://github.com/otissv/authentication-service.git
 $ npm install
 ```
 
-3 . Start the server
+3 . Add a secret.js to root directory with the following
+```
+export const token = 'change_to_secret';
+```
+
+4 . Start the server
 ```
 npm start
 ```
