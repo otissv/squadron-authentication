@@ -1,13 +1,13 @@
 'use strict';
 
 import databases from './databases';
-import env from './env/env';
+import environment from './env/environment';
 import middleware from './middleware/middleware-index';
 import routes from './routes';
 
 
 export default function (app, express) {
-  env(app);
+  environment(app);
   middleware(app, express);
   routes(app, {
     databases: {

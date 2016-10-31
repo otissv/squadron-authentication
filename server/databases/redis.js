@@ -30,9 +30,9 @@ export function connection ({ port, uri }) {
   });
 
   // Return instance of redis client
-  return client
+  return client;
 };
 
 export default {
   connect: (options) => connection(options)
-}
+};

@@ -56,7 +56,7 @@ export default function security (app) {
   app.use(helmet.noSniff());
   app.use(helmet.ieNoOpen());
   app.use(helmet.hidePoweredBy());
-  app.use(helmet.dnsPrefetchControl())
+  app.use(helmet.dnsPrefetchControl());
   // app.use(require('express-enforces-ssl'));
   // app.use(helmet.hpkp({
   //   maxAge: ninetyDaysInMilliseconds,

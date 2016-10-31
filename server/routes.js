@@ -3,19 +3,7 @@
 */
 
 'use strict';
-import v01Routes from '../api/v01/v01-routes';
-
-function apolloConfig ({ context, mock, req }) {
-  return {
-    schema: schema,
-    resolvers: resolvers,
-    connectors: connectors(mock),
-    context: {
-      req,
-      ...context
-    }
-  }
-}
+import v01Routes from '../api/v01/auth-v01-routes';
 
 export default function routes (app, context) {
   app.route('/').get((req, res) => {

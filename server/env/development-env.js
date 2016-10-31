@@ -4,15 +4,16 @@
 
 'use strict';
 
-import all from './all-env.js';
+import services from '../../../services';
 
+const { host, port } = services.development.authentication;
 
 export default {
-  port   : all.port,
-  baseURL: 'http://localhost:' + all.port,
-  title  : all.title + ' Dev',
+  port,
+  baseURL: `${host}:${port}`,
+  title  : 'Squadron Authentication' + ' Dev',
   mongodb: {
-    uri: 'mongodb://127.0.0.1:27017/test',
+    uri : 'mongodb://127.0.0.1:27017/test',
     opts: {
       server: {
         socketOptions: { keepAlive: 1 }
@@ -20,8 +21,13 @@ export default {
     }
   },
   redis: {
-    uri: '127.0.0.1',
+    uri : '127.0.0.1',
     port: 6379
   },
-  session: all.session
+  rethinkdb: {
+    port: 28015,
+    host: 'localhost',
+    db  : 'test'
+  },
+  services: services.development
 };

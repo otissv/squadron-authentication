@@ -9,21 +9,16 @@ import {
   generateHash,
   generateToken
 } from '../../../../squadron-utils';
-import { TOKEN } from '../../../secret';
-import { env } from '../../../server/env/environment.js';
-import redis from '../../../server/databases/redis';
 
-
-const client = redis.connect(env().redis);
+const redis = databases.redis.connect(development.redis);
 
 
 const seedDB = (resolve, reject, item, index, arr) => {
-  const KEY = `authentiaction:${item.client}:${item.data.id}`;
-
+  const KEY = `authentiaction:${item.id}`;
   const data = {
-    ...item.data,
+    ...item,
     password: generateHash(item.password),
-    token: generateToken({ payload: item.data, token: TOKEN })
+    token: generateHash(generateToken()(item))
   };
 
   const fields = R.pipe(
@@ -31,7 +26,7 @@ const seedDB = (resolve, reject, item, index, arr) => {
     R.flatten
   )(data);
 
-  client.hmset(KEY, fields)
+  redis.hmset(KEY, fields)
     .then(response => {
       resolve(data);
     })
@@ -50,4 +45,20 @@ export default function authentiactionSeed () {
       })
       .catch(err => reject(err));
   });
+
 }
+
+// seedAuthentiaction()
+//   .then(response => {
+//     console.log('Authentiaction mocks has been seeded in redis');
+//   })
+//   .catch(err => console.log(err));
+
+
+// redis.hgetall('authentiaction:563fa9dd007093486f3052a5')
+//   .then(response => {
+//     console.log(response);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });

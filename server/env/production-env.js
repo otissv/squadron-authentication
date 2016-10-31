@@ -1,15 +1,18 @@
 /*
-* Production enviorment*/
+* Production enviorment
+* */
 
 'use strict';
 
-import all from './all-env.js';
+import services from '../../../services';
+
+const { host, port } = services.production.authentication;
 
 
 export default {
-  port   : all.port,
-  baseURL: 'http://www.yourwebsite.com',
-  title  : all.title,
+  port,
+  baseURL: `${host}:${port}`,
+  title  : 'Squadron Authentication',
   mongodb     : {
     uri  : 'path/to/database/location',
     opts: {
@@ -18,6 +21,14 @@ export default {
       }
     }
   },
-  session: all.session
+  redis: {
+    uri : '127.0.0.1',
+    port: 6379
+  },
+  rethinkdb: {
+    port: 28015,
+    host: 'localhost',
+    db  : 'test'
+  },
+  services: services.production
 };
-

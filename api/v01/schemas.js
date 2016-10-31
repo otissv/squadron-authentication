@@ -1,9 +1,15 @@
-import  authentiaction, { authentiactionQueries, authentiactionMutations } from './authentiaction/authentiaction-schemas';
-
+import authentiaction, {
+  authentiactionQueries,
+  authentiactionMutations
+} from './authentiaction/authentiaction-schema';
+import authorised, {
+  authorisedQueries
+} from './authorised/authorised-schema';
 
 const typeDefinitions = `
 type Query {
   ${authentiactionQueries}
+  ${authorisedQueries}
 }
 type Mutation {
   ${authentiactionMutations}
@@ -18,4 +24,5 @@ schema {
 export default [
   typeDefinitions,
   authentiaction,
+  authorised
 ];

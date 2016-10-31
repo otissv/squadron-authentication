@@ -1,8 +1,9 @@
-import AuthentiactionMock from './authentiaction/authentiaction-mocks';
-
+import AuthentiactionMock from './authentiaction/authentiaction-mock';
+import AuthorisedMock from './authorised/authorised-mock';
 
 const mocks = {
-  authentiactionMock    : AuthentiactionMock,
+  authentiactionMock: AuthentiactionMock,
+  authorisedMock    : AuthorisedMock
 };
 
 

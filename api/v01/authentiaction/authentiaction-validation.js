@@ -1,8 +1,8 @@
 import isSchema from 'is-schema-valid';
 
 
-export const authentiactionModel = {
-  _id      : 'string',
+export const authentiaction = {
+  id       : 'string',
   password : 'string',
   roles    : ['string'],
   token    : 'string',
@@ -10,4 +10,4 @@ export const authentiactionModel = {
 };
 
 
-export const authentiactionValidation = isSchema(authentiactionModel);
+export default isSchema(authentiaction);

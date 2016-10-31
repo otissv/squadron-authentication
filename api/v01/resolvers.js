@@ -1,11 +1,12 @@
-import { authentiactionQueries, authentiactionMutations } from './authentiaction/authentiaction-resolvers';
-
+import { authentiactionQueries, authentiactionMutations } from './authentiaction/authentiaction-resolver';
+import { authorisedQueries } from './authorised/authorised-resolver';
 
 export default {
   Query: {
-    ...authentiactionQueries
+    ...authentiactionQueries,
+    ...authorisedQueries
   },
-  
+
   Mutation: {
     ...authentiactionMutations
   }

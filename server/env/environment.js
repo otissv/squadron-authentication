@@ -6,21 +6,23 @@
 
 import development from './development-env.js';
 import production from './production-env.js';
+import getEnv from 'get-env';
 
+const ENV = getEnv();
 
-function getConfig (app) {
-  switch (app.get('env')) {
-    case 'development':
+export function env () {
+  switch (ENV) {
+    case 'dev':
       return development;
-    case 'production':
+    case 'prod':
       return production;
     default:
       throw new Error('Unknow execption Enviorment:');
   }
 };
 
-export default function env (app) {
-  const config = getConfig(app);
+export default function environment (app) {
+  const config = env();
   /*
   *Application variables
   */

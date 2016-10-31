@@ -5,8 +5,8 @@
   "scripts": {
     "start": "nodemon --exec npm run babel-node -- ./server/index.js",
     "babel-node": "babel-node",
-    "lint": "eslint --quiet './' && echo 'Completed:' && date || true && echo 'Completed:' && date",
-    "lint:watch": "watch 'npm run lint' ./backend",
+    "lint": "eslint --quiet './' && echo 'Completed:' && date || true && echo 'Completed:'",
+    "lint:watch": "watch 'npm run lint' ./",
     "tape": "babel-node test-runner.js | tap-min || true",
     "tape:spec": "babel-node test-runner.js | tap-difflet || true",
     "test": "npm run tape",
@@ -41,6 +41,7 @@
     "express-enforces-ssl": "~1.1.0",
     "express-logger": "0.0.3",
     "express-session": "~1.14.0",
+    "get-env": "^0.5.1",
     "graphql": "~0.6.2",
     "helmet": "~2.2.0",
     "is-schema-valid": "~0.2.0",
@@ -53,6 +54,7 @@
     "promise-redis": "0.0.5",
     "ramda": "~0.22.1",
     "redis": "~2.6.0-1",
+    "rethinkdbdash": "^2.3.23",
     "ufunc": "~2.0.0"
   },
   "devDependencies": {

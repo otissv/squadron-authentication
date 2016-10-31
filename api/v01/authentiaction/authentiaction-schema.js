@@ -2,7 +2,6 @@
 export default `
 type Authentiaction {
   id             : String,
-  dateOfBirth    : String,
   email          : String,
   firstName      : String
   lastName       : String,
@@ -10,10 +9,12 @@ type Authentiaction {
   roles          : [String],
   telephoneNumber: String,
   token          : String,
-  username       : String
-
+  username       : String,
+  _result_       : String
 }
 `;
+
+
 
 export const authentiactionQueries = `
   authenticate(
@@ -25,7 +26,6 @@ export const authentiactionQueries = `
 export const authentiactionMutations = `
   register(
     id             : String,
-    dateOfBirth    : String,
     email          : String,
     firstName      : String
     lastName       : String,
