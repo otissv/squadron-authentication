@@ -11,6 +11,7 @@ import redis from '../../../server/databases/redis';
 import { TOKEN } from '../../../secret';
 import { env } from '../../../server/env/environment.js';
 
+
 function cleanResponse (response) {
   return cleanObject({
     ...response,
@@ -20,10 +21,12 @@ function cleanResponse (response) {
   })
 }
 
+
 export default class Authentiaction {
   constructor () {
     this.redis = redis.connect(env().redis);
   }
+  
 
   authenticate ({ args, req }) {
     const { password, id } = args;

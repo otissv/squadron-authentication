@@ -1,8 +1,8 @@
-import mocks from './mocks';
+import mocks from './v01-auth-mocks';
 
 
-import Authentiaction from './authentiaction/authentiaction-connector';;
-import Authorised from './authorised/authorised-connector';;
+import Authentiaction from './authentiaction/authentiaction-connector';
+import Authorised from './authorised/authorised-connector';
 
 const {
   authentiactionMock,

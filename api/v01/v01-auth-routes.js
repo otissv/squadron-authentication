@@ -6,10 +6,10 @@
 'use strict';
 
 import { apolloServer } from 'apollo-server';
-import connectors from './connectors';
-import validation from './validation';
-import resolvers from './resolvers';
-import schema from './schemas';
+import connectors from './v01-auth-connectors';
+import validation from './v01-auth-validation';
+import resolvers from './v01-auth-resolvers';
+import schema from './v01-auth-schemas';
 import ERROR from './error/error';
 
 

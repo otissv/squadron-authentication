@@ -3,7 +3,7 @@
 */
 
 'use strict';
-import v01Routes from '../api/v01/auth-v01-routes';
+import v01Routes from '../api/v01/v01-auth-routes';
 
 export default function routes (app, context) {
   app.route('/').get((req, res) => {
