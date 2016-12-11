@@ -9,7 +9,6 @@ type Authorised {
 `;
 
 
-
 export const authorisedQueries = `
   authorised(
     id   : String,

@@ -5,11 +5,11 @@ import {
   generateHash,
   generateToken,
   verifyToken
-} from '../../../../squadron-utils';
+} from '../../../squadron-utils';
 import ERROR from '../error/error';
-import redis from '../../../server/databases/redis';
-import { TOKEN } from '../../../secret';
-import { env } from '../../../server/env/environment.js';
+import redis from '../../server/databases/redis';
+import { TOKEN } from '../../secret';
+import { env } from '../../server/env/environment.js';
 
 function cleanResponse (response) {
   return cleanObject({
@@ -29,17 +29,17 @@ export default class Authentiaction {
     const dataIsValid = validation.authorised({ id, token }).valid;
     const client = typeof req.body.client === 'string' ? JSON.parse(req.body.client).host : req.body.client.host;
     const KEY = `authentiaction:${client}:${args.id}`;
-
+console.log(KEY);
     return promise((resolve, reject) => {
       if (!dataIsValid) {
-        console.error(ERROR.INVALID_DATA);
+        console.error('dataIsValid', ERROR.INVALID_DATA);
         reject(false);
 
       } else {
         this.redis.hgetall(KEY)
           .then(response => {
             if (!response) {
-              console.error(ERROR.INVALID_DATA);
+              console.error('response', ERROR.INVALID_DATA);
               reject({
                 _result_: false
               });
@@ -53,7 +53,7 @@ export default class Authentiaction {
                   _result_: true
                 });
               };
-              
+
             } catch (e) {
               reject({
                 _result_: false

@@ -1,32 +1,32 @@
 export const authentiactionsMock = [
   {
-    client           : 'squadron.local.server',
-    data             : {
-      id             : '051e4c84-af48-4372-82b9-432879d115a3',
+    client : 'loop.local.server',
+    data   : {
+      id             : 'user-0',
+      firstName      : 'otis',
+      username       : 'otis',
+      lastName       : 'otisV',
       created        : 'Wed May 11 2016 01:29:39 GMT+0200 (CEST)',
       email          : 'ania@email.com',
-      firstName      : 'ania',
-      lastName       : 'zeyler',
-      password       : 'ania',
+      password       : '0',
       roles          : ['admin'].toString(),
       telephoneNumber: '+48 513 684 829',
-      token          : 'this_is_my_token',
-      username       : 'ania'
+      token          : 'this_is_my_token'
     }
   },
   {
-    client           : 'squadron.local.server',
-    data             : {
-      id             : 'c362f0ad-2114-40bc-aa71-a22f855db085',
+    client : 'loop.local.server',
+    data   : {
+      id             : 'user-1',
+      firstName      : 'marta',
+      username       : 'marta',
+      lastName       : 'martaK',
       created        : 'Wed May 11 2016 01:29:39 GMT+0200 (CEST)',
       email          : 'otis@email.com',
-      firstName      : 'otis',
-      lastName       : 'virginie',
       password       : 'otis',
       roles          : ['admin', 'user'].toString(),
       telephoneNumber: '+48 513 684 829',
-      token          : 'this_is_my_token',
-      username       : 'otis'
+      token          : 'this_is_my_token'
     }
   }
 ];

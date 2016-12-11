@@ -5,11 +5,11 @@ import {
   generateHash,
   generateToken,
   verifyToken
-} from '../../../../squadron-utils';
+} from '../../../squadron-utils';
 import ERROR from '../error/error';
-import redis from '../../../server/databases/redis';
-import { TOKEN } from '../../../secret';
-import { env } from '../../../server/env/environment.js';
+import redis from '../../server/databases/redis';
+import { TOKEN } from '../../secret';
+import { env } from '../../server/env/environment.js';
 
 
 function cleanResponse (response) {
@@ -18,7 +18,7 @@ function cleanResponse (response) {
     token: generateHash(response.token),
     password: null,
     roles: response.roles ? response.roles.split() : []
-  })
+  });
 }
 
 
@@ -26,7 +26,7 @@ export default class Authentiaction {
   constructor () {
     this.redis = redis.connect(env().redis);
   }
-  
+
 
   authenticate ({ args, req }) {
     const { password, id } = args;

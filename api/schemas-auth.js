@@ -1,10 +1,10 @@
 import authentiaction, {
   authentiactionQueries,
   authentiactionMutations
-} from './authentiaction/authentiaction-schema';
+} from './authentiaction/schema-authentiaction';
 import authorised, {
   authorisedQueries
-} from './authorised/authorised-schema';
+} from './authorised/schema-authorised';
 
 const typeDefinitions = `
 type Query {
